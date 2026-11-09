@@ -78,10 +78,10 @@ img {
 }
 
 .hero__headline {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   margin-bottom: 14px;
   color: #ffffff;
 }
@@ -433,6 +433,26 @@ img {
   margin-bottom: 8px;
 }
 
+.footer__legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer__legal a:hover {
+  color: #ffffff;
+}
+
 .footer__copy {
   font-size: 12px;
   font-weight: 400;
@@ -455,7 +475,7 @@ img {
   }
 
   .hero__headline {
-    font-size: 54px;
+    font-size: 40px;
   }
 
   .social-btn {
