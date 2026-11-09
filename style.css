@@ -78,43 +78,26 @@ img {
 }
 
 .hero__headline {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.82) 0px,
-    rgba(255, 255, 255, 0.82) 310px,
-    rgba(255, 255, 255, 1.00) 350px,
-    rgba(255, 255, 255, 0.82) 390px,
-    rgba(255, 255, 255, 0.82) 420px
-  );
-  animation: shimmerText 4s linear infinite;
+  color: #ffffff;
 }
 
 .hero__accent {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: repeating-linear-gradient(
-    90deg,
-    #0a2d35 0px,
-    #0a2d35 310px,
-    #2d8c9e 350px,
-    #0a2d35 390px,
-    #0a2d35 420px
-  );
-  animation: shimmerText 4s linear infinite;
+  background-image: linear-gradient(90deg, #7ef0ff, #20B1C2, #ffffff, #20B1C2, #7ef0ff);
+  background-size: 300% auto;
+  animation: accentFlow 3s linear infinite;
 }
 
-@keyframes shimmerText {
-  from { background-position: 0 0; }
-  to   { background-position: 420px 0; }
+@keyframes accentFlow {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 .hero__sub {
