@@ -723,6 +723,8 @@ img {
   font-weight: 600;
 }
 
+.modal__pane[hidden] { display: none !important; }
+
 .modal__success {
   display: flex;
   flex-direction: column;
