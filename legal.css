@@ -45,7 +45,7 @@
   padding: 18px 20px;
   background: var(--white);
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--brand);
+  border: 1px solid var(--border);
   font-size: 14px;
   line-height: 1.65;
   color: var(--text-muted);
