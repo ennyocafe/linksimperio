@@ -60,18 +60,26 @@
     return valid
   }
 
-  function buildMessage() {
-    return encodeURIComponent(
-      '🏢 *Banco de Talentos — Nova Candidatura*\n\n' +
-      '*Nome:* ' + document.getElementById('f-nome').value + '\n' +
-      '*WhatsApp:* ' + document.getElementById('f-whatsapp').value + '\n' +
-      '*E-mail:* ' + document.getElementById('f-email').value + '\n\n' +
-      '*Unidade:* ' + document.getElementById('f-unidade').value + '\n' +
-      '*Área:* ' + document.getElementById('f-area').value + '\n\n' +
-      '*Apresentação:*\n' + document.getElementById('f-apresentacao').value + '\n\n' +
-      '*Habilidades:*\n' + document.getElementById('f-habilidades').value + '\n\n' +
-      '*Motivação:*\n' + document.getElementById('f-motivacao').value
-    )
+  function getFormData() {
+    return {
+      nome:         document.getElementById('f-nome').value,
+      whatsapp:     document.getElementById('f-whatsapp').value,
+      email:        document.getElementById('f-email').value,
+      unidade:      document.getElementById('f-unidade').value,
+      area:         document.getElementById('f-area').value,
+      apresentacao: document.getElementById('f-apresentacao').value,
+      habilidades:  document.getElementById('f-habilidades').value,
+      motivacao:    document.getElementById('f-motivacao').value,
+      data:         new Date().toLocaleString('pt-BR', { timeZone: 'America/Fortaleza' }),
+    }
+  }
+
+  function sendToWebhook(data) {
+    return fetch('https://hook.us2.make.com/v6gfla3ze1nznln5kmhx0b6xznu2e5k6', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
   }
 
   function openModal() {
@@ -95,8 +103,15 @@
   btnNext.addEventListener('click', function () {
     if (!validateCurrent()) return
     if (current === TOTAL) {
-      window.open('https://wa.me/5589940937771?text=' + buildMessage(), '_blank')
-      showPane(TOTAL + 1)
+      btnNext.disabled = true
+      btnNext.textContent = 'Enviando...'
+      sendToWebhook(getFormData())
+        .then(function () { showPane(TOTAL + 1) })
+        .catch(function () { showPane(TOTAL + 1) }) // mostra sucesso mesmo se falhar na rede
+        .finally(function () {
+          btnNext.disabled = false
+          btnNext.textContent = 'Enviar candidatura'
+        })
     } else {
       current++
       showPane(current)
