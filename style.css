@@ -803,6 +803,53 @@ img {
 .modal__footer.hide-back .modal__btn-back { display: none; }
 
 /* ============================================
+   LINK ITEM — Button variant (modal trigger)
+   ============================================ */
+
+button.link-item {
+  width: 100%;
+  text-align: left;
+  background: var(--white);
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Forum button — gradient */
+button.link-item--forum {
+  background: linear-gradient(90deg, #00FE5D 0%, #00E7CD 100%);
+  border-color: transparent;
+}
+
+button.link-item--forum .link-item__label {
+  color: #ffffff;
+}
+
+button.link-item--forum .link-item__sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+button.link-item--forum .link-item__arrow {
+  color: #ffffff;
+}
+
+.link-item__icon--photo {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.link-item__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
    DESKTOP — min-width: 768px
    ============================================ */
 

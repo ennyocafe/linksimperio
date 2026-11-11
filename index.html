@@ -73,6 +73,21 @@
           </div>
         </a>
 
+        <button class="link-item link-item--forum" id="openForumModal" type="button">
+          <div class="link-item__icon link-item__icon--photo">
+            <img src="assets/forum-dom-inocencio.png" alt="Fórum da Reforma Tributária" class="link-item__photo" />
+          </div>
+          <div class="link-item__text">
+            <span class="link-item__label">Fórum da Reforma Tributária</span>
+            <span class="link-item__sub">Dom Inocêncio</span>
+          </div>
+          <div class="link-item__arrow link-item__arrow--muted">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </button>
+
         <a href="unidades.html" class="link-item">
           <div class="link-item__icon link-item__icon--muted">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -129,6 +144,7 @@
             </svg>
           </div>
         </a>
+
 
       </div>
     </section>
@@ -361,5 +377,67 @@
   </div>
 
   <script src="modal.js"></script>
+
+  <!-- MODAL — Fórum da Reforma Tributária -->
+  <div class="modal-overlay" id="forumModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+
+      <div class="modal__header">
+        <div class="modal__top">
+          <span class="modal__label">Fórum da Reforma Tributária</span>
+          <button class="modal__close" id="forumModalClose" aria-label="Fechar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal__body">
+
+        <!-- Formulário -->
+        <div class="modal__pane" data-pane="forum-form">
+          <div class="modal__pane-header">
+            <h3 class="modal__pane-title">Garanta sua vaga!</h3>
+            <p class="modal__pane-sub">Preencha seus dados para participar do Fórum em Dom Inocêncio.</p>
+          </div>
+          <div class="form-fields">
+            <div class="form-group">
+              <label class="form-label" for="ff-nome">Nome completo <span class="form-required">*</span></label>
+              <input class="form-input" id="ff-nome" type="text" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ff-numero">Número de WhatsApp <span class="form-required">*</span></label>
+              <input class="form-input" id="ff-numero" type="tel" placeholder="(00) 00000-0000" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ff-empresa">Nome da empresa <span class="form-required">*</span></label>
+              <input class="form-input" id="ff-empresa" type="text" placeholder="Nome da sua empresa" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Sucesso -->
+        <div class="modal__pane modal__success" data-pane="forum-success" hidden>
+          <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3>Inscrição confirmada!</h3>
+          <p>O WhatsApp vai abrir automaticamente com sua mensagem. Só enviar e pronto!</p>
+          <button class="btn-primary" id="forumSuccessClose" type="button" style="max-width:220px;margin-top:8px;">Fechar</button>
+        </div>
+
+      </div>
+
+      <div class="modal__footer" id="forumModalFooter">
+        <button class="modal__btn-next" id="forumBtnInscrever" type="button">Se inscrever</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="forum.js"></script>
 </body>
 </html>
