@@ -832,6 +832,29 @@ button.link-item--forum .link-item__arrow {
   color: #ffffff;
 }
 
+/* Escala 5x2 link item — navy gradient */
+.link-item--escala {
+  background: linear-gradient(90deg, #083358 0%, #0096A8 100%);
+  border-color: transparent;
+}
+
+.link-item--escala .link-item__label {
+  color: #ffffff;
+}
+
+.link-item--escala .link-item__sub {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.link-item--escala .link-item__arrow {
+  color: #ffffff;
+}
+
+.link-item--escala .link-item__icon--photo {
+  background: #ffffff;
+  padding: 4px;
+}
+
 .link-item__icon--photo {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
